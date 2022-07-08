@@ -122,7 +122,7 @@ $(document).ready(function(){
 	
 	/////////////////////////////
 	//이벤트디자인 썸네일클릭시 팝업(큰이미지)
-	$("#event>div>div").click(function(){
+	$("#event>div>div:not(#media)").click(function(){
 			//썸네일이미지에서 주소와 alt를 get
 			const src1 = $(this).children("img").attr("src");
 			const src2 = src1.replace(".jpg" , "_big.jpg");
@@ -135,6 +135,16 @@ $(document).ready(function(){
 	$("#popup img").click(function(){
 		$("#popup").fadeOut();
 	});
+	
+	
+	$("#media p").click(function(){
+			$("#popup2").fadeIn();
+	});
+	$("#popup2 button").click(function(){
+			$("#popup2").fadeOut();
+	});
+	
+	
 	
 	
 });//////////end

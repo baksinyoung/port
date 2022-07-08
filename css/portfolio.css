@@ -25,7 +25,7 @@ body>nav {
 		width:100%; top:0;
 		padding:20pt 10pt 10pt 10pt;
 		font-weight:bold;
-		z-index:1;		
+		z-index:3;		
 }
 body>nav>div {
 	max-width:1490px; margin:auto;
@@ -33,7 +33,7 @@ body>nav>div {
 }
 /*로고*/
 body>nav img{
-  width:30px;
+  width:40px;
 }
 
 body>nav #img {
@@ -185,16 +185,56 @@ body>nav a:hover, a.act {color:#00aeff; transform:scale(1.1);}
 		position:relative; width:280pt; margin-bottom:10pt;
 		overflow:hidden; cursor:pointer;		
 }
+
+/******
 #event img {
 		width:100%; height:100%; transition:0.5s;
 }
 
+#popup2 {
+		position:fixed; border:10px solid red;
+		width:100%; max-width:900px;
+		left: calc((100% - 900px) / 2); 
+		top:200px; z-index:1; 
+		display:none;
+		background:white; padding-bottom:20px;
+		padding-right:20px;
+}
+#popup2 video { width:100%; margin-bottom:10px;}
+#popup2 button {float:right;}
+margin-top:10%;
+*/
+
+
+
+#event img {
+		width:100%; height:100%; transition:0.5s;
+}
+
+#popup2 {
+		position:fixed;
+		width:100%; height:100vh;		
+		top:0; z-index:1; 
+		padding-bottom:20px;	
+		background:rgba(0,0,0, 0.9);
+		overflow:auto; 
+		display:none;
+}
+#popup2 video { width:50vw; margin-top:10%; margin-left:25%;}
+#popup2 button {float:right; margin-right:100vh; margin-top:10vh; border:1px solid white; background:black; color:white; width:50px; height:30px; cursor:pointer; font-size:1rem;}
+
+
+/*********/
+
 /*(돋보기+자세히보기)--호버*/
+
 #event>div>div:hover img {transform:scale(1.1); }
 #event>div>div:hover p	{opacity:1;}
 
+#event>div>#media:hover button {transform:scale(1.1); }
+#event>div>#media:hover p	{opacity:1;}
 /*(돋보기+자세히보기)*/
-#event p {
+#event p{
 		position:absolute; width:100%; height:100%;
 		top:0; background:rgba(0,0,0, 0.75);
 		color:white; text-align:center; opacity:0;
@@ -309,6 +349,17 @@ body>nav a:hover, a.act {color:#00aeff; transform:scale(1.1);}
 	}	
 	#portfolio nav a:not(:last-child) {margin-right:3px;}
 	#leeum>div:first-child {padding-top:30pt;}	
+	
+	
+	#popup2 video {border:10px solid white; width:60vw; margin-top:60%; margin-left:18%;}
+	#popup2 button {
+		float:right; margin-right:23vh; margin-top:5vh; border:1px solid white; 
+		background:black; color:white; width:50px; height:30px; cursor:pointer; font-size:1rem;
+	
+	}
+	
+	
+	
 	
 }
 
