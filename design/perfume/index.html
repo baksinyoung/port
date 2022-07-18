@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>향수</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	
+		/*상단 투명하게 나타남*/
+		$("header").css("animation","opa1 1s both");
+		$("main").css("animation","opa2 2s both");
+		
+		if($(window).width()<801){
+			/*상단 왼쪽의 햄버거(빨래판)모양 클릭시 위에서 메뉴 내려옴 */
+			$("header>p").click(function(){
+				$("body>nav").slideDown();
+				//$("header>p").html("&#x2612;");
+				$("body").css("overflow","hidden");
+			});
+		
+			/*상단 왼쪽 메뉴 영역 바깥 클릭시  메뉴 왼쪽으로 들어감 */
+			$(document).mouseup(function (area) {  
+				if (!$("body>nav").is(area.target)){  
+					$("body>nav").slideUp(); 
+					//$("header>p").html("&#x2630;");
+					$("body").css("overflow","auto");				
+				}  
+			});
+		}
+	
+		/*페이지 내에서 링크이동할때 부드럽게 이동*/
+		$("a").click(function(bbb){
+			if(this.hash !=""){
+				$("html,body").animate({
+					scrollTop: $(this.hash).offset().top},1000,function(){
+						window.location.hash=$(this.hash);
+					});
+			}
+		});
+		
+		/*오른쪽에 출렁이는  [top]아이콘*/
+		$(window).scrollTop(0);
+		var t1= parseInt( $("#top").css("top"));
+		$(window).scroll(function(){
+			var t2= $(window).scrollTop();
+			$("#top").stop().animate({top: t1+t2+"px"});
+		});
+	});
+	</script>
+	<style>
+	
+	* 			{margin:0; padding:0; box-sizing: border-box;}
+	html,body	{font-family: "나눔고딕","맑은 고딕"; width:100vw; 
+				line-height:23pt; position:relative; }
+	::-webkit-scrollbar {width:1px;}
+	#layout		{display:block;}		
+	
+	
+	#top	{display:block; width:50px; height:50px;transform:rotate(90deg); 
+			position:absolute; z-index:2;right:30px; top:90vh; font-size:3rem; }
+			
+	#top>a			{background:white; display:block; padding:10px;
+					text-decoration:none;box-shadow:1px 1px 2px black; 
+					border-radius:10px}
+	#top>a:hover	{color:red;}
+	
+	
+	header	 		{background-color: #c721d6; padding: 30pt; 
+					color:white; opacity:0; 
+					position:relative; display:flex; }
+	header>h1		{order:2; flex:1; text-align:center; padding-right:50px}
+	header>p		{order:1; font:bold 1.5rem "맑은 고딕"; 
+					cursor:pointer;}					
+	header>h1		{text-align:center; }
+	
+	body>nav			{position:absolute; z-index:1;
+						width:100vw; padding:30pt;
+						background:rgba(255,255,255,1); 
+						display:none;box-shadow:0 3px 8px rgba(0,0,0,0.5);}
+	body>nav>ul			{list-style:none; }
+	body>nav a			{text-decoration: none; color: black; 
+						font-size:1.3rem; font-weight:bold;
+						display:block; padding:10pt; 
+						border-bottom: 1px solid #ddd;}
+	body>nav a:hover	{text-decoration: underline; color: #fa29df;}	
+	
+	@keyframes opa1	{
+		from	{opacity:0;}
+		to		{opacity:1;}
+	}
+
+	
+	main 			{padding:0pt; margin: 10pt; margin-left:-20px; 
+					opacity:0; }
+	@keyframes opa2	{
+		0%		{opacity:0;margin-left:-20px;}
+		10%		{opacity:0;margin-left:-20px;}
+		100%	{opacity:1;margin-left:20px;}
+	}
+	
+	main>h2,
+	main>p		{padding-bottom:5pt; text-align:justify;}
+	main>p>img			{width:50px; float:left; 
+						margin:10px 20px 0 0;}
+	main>figure			{margin:auto;}		
+	main>figure>img		{width:98%; border-radius:20px; 
+						box-shadow:1px 1px 5px black; }
+	main figcaption		{text-align:center; font-size:0.8rem; color:#db564c;}
+
+	aside>h2::before	{content:"\2619"; 
+						color:#9f00b7; 
+						margin-right:10px;}
+	aside 			{background-color: #f0c8eb; 
+					padding: 10pt;  
+					margin: 10pt; 
+					font-size:0.8rem;}
+	aside>p			{padding-bottom:5pt;}
+	footer 			{background-color: #ddd; text-align: center; padding:20pt;  
+					font-size: 10pt; line-height:15pt;}
+	
+	
+	@media screen and (min-width:801px) {			
+			header>p		{display:none;}
+			
+			body>nav		{width:90vw; display:block;
+							margin:20pt 5vw; box-shadow:none;
+							height:auto; padding:10pt;
+							background:transparent; box-shadow:none; }
+			body>nav>ul		{list-style:none; display:flex;}
+			body>nav li	 	{flex:1;  border-bottom:0; padding:0;}
+			body>nav a		{color:black; text-align:center; 
+							height:auto; }			
+			
+			main			{flex:3; padding:30px; margin-top:100px;}
+			aside			{flex:1;}
+	}
+	</style>
+</head>
+<body>
+
+<header id="tt">
+	<h1>향수</h1>
+	<p>&#x2630;</p>
+</header>
+<nav>
+	<ul>
+		<li><a href="#m1">향수의 어원</a></li>
+		<li><a href="#">향수의 유래</a></li>
+		<li><a href="#">향수의 종류</a></li>
+		<li><a href="#m4">향수의 지속시간</a></li>
+	</ul>
+</nav>
+<div id="layout">	
+	<main id="m1">
+		<h2>
+			<ruby>
+				향수<rt>香水</rt>
+			</ruby>
+			의 어원
+		</h2>
+		<p><img src="img/purfume2.png" alt="향수">향수는 어원인 라틴어 ‘per fumum’은 ‘연기를 통한다’는 의미를 담고 있는 향수는 인류가 최초로 사용한 화장품이라고 볼 수 있습니다. 약 5,000년 전의 고대 사람들이 종교적 의식, 곧 신과 인간과의 교감을 위한 매개체로 사용한데서부터 시작되었습니다. 향수 원액의 농도에 따라 파르푕, 오드파르푕, 오드투알레트, 오드콜로뉴 등으로 나눌 수 있습니다.</p>
+		<figure>
+			<img src="img/purfume1.jpg" alt="향수이미지">
+			<figcaption>
+				향수를 손목에 분사하고 있는 장면
+			</figcaption>
+		</figure>
+	</main>
+	<aside>
+		<h2>향수의 어원은?</h2>
+		<p>라틴어 ‘per fumum’은 ‘연기를 통한다’는 의미입니다.</p>
+		<h2>향수는 화장품인가요?</h2>
+		<p> 향수는 인류가 최초로 사용한 화장품이라고 볼 수 있습니다.</p>
+		<h2>향수의 농도는 모두 동일한가요?</h2>
+		<p>향수 원액의 농도에 따라 파르푕, 오드파르푕, 오드투알레트, 오드콜로뉴 등으로 나눌 수 있습니다.</p>
+	</aside>
+</div>
+
+<footer id="m4">
+	로션을 바른 다음 향수를 뿌려야 피부의 보습이 유지되며, 향수 지속시간도 오래 유지됩니다.
+</footer>
+
+<div id="top"><a href="#tt">&#10096;</a></div>
+
+</body>
+</html>
