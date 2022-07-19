@@ -60,7 +60,7 @@ body>nav a:hover, a.act {color:#00aeff; transform:scale(1.1);}
 /*첫화면(헤더)*/
 #top {
 		height:100vh; 
-		background:url("../images/bg.jpg") no-repeat fixed center top / cover;
+		background:url("../images/bg3.jpg") no-repeat fixed center top / cover;
 }
 #typing {
 		padding:40vh 1px 0 1px; color:white;
