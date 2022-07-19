@@ -259,14 +259,23 @@ margin-top:10%;
 #popup img {margin:auto;}
 
 /************/
+
+#web {max-width:900pt; margin:auto; text-align:center;}
+
+#web h2{margin-top:100pt; margin-bottom:0;}
+#web span {display:block; margin:100px 0;}
+#web span a { padding:10px; background:#262626; border-radius:30px; color:white;}
+
+#web span a:hover {background:white; border:1px solid #262626; color:black;}
+
 /*Contact us*/
-#contact {background:#eee;}
+#contact {background:#eee; }
 #contact b {
 		display:block; font-size:1.1rem;
 		font-weight:400; padding-top:20pt;
 }
 #contact div {		
-		max-width:600px; margin:auto;
+		max-width:600px; margin:auto; 
 		display:flex; padding-top:30pt;
 }
 #contact section {flex:1; text-align:center;}
