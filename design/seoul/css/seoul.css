@@ -1,0 +1,222 @@
+@charset "utf-8";
+
+body {padding:0; margin:0; box-sizing:border-box;}
+img {max-width:100%; display:block;}
+#layout {position:relative; max-width:100%; }
+	a {text-decoration:none; color:black;}
+	
+	
+	
+	
+/*헤더*/
+#header_div {background:white; width:100%; text-align:center; padding:2vw 0 1vw; z-index:1; position:fixed; background:white; top:0;}
+header {display:flex;  height:4vh;  align-items:center; width:70%; margin:auto; }
+header a {flex:2; display:inline; max-width:100%; font-family: 'Gowun Batang', serif; font-size:1vw; }
+header div a { padding-right:3vw;}
+header div a:hover {
+	color:#f47c7d;
+} 
+
+/*이미지*/
+
+.main_img {position:relative; overflow:hidden; margin-top:3vh;}
+
+.main_img img {width:100%; vertical-align: middle;}
+.main_text {text-align:center; position:absolute; left:50%; top:60%; transform:translate(-50%,-50%);}
+#img button{
+	background:#423F3E; border:none;  color:white; margin:2vw; font-size:1.5vw;}
+.main_text p{ color:white; margin:0;}
+.main_text p:first-child {font-size:3vw; font-family: 'Gowun Batang', serif;}
+.main_text p:nth-child(2) {font-family: 'Gowun Batang', serif; font-size:2vw;}
+
+#img button:hover {
+	background:white;
+	color:#423F3E;
+}
+
+
+/*슬라이드*/
+#slide {
+	width:300vw; display:flex; position:relative;
+}
+#slide img {width:100vw;}
+
+
+
+/*5가지 이유*/
+#reason_div {
+	border:1px solid transparent;
+	background:#fff;
+	padding-top:7vw; padding-bottom:7vw;
+}
+#reason {
+	
+	width:70%; margin:auto;
+	border:1px solid transparent; text-align:center;
+	font-family: 'Gowun Batang', serif;
+	padding:3vw 0;
+	font-size:2.1vw; 
+	}
+#reason>p,h2 {margin:0; }
+#reason>h2 {margin-bottom:2vw; }
+#reason hr {width:13vw; margin-top:3vw;}
+#reason button { 
+	background:none; border:2px solid #423F3E; border-radius:1rem; margin:3rem 0; 
+	font-family: 'Gowun Batang', serif; font-size:1vw;
+}
+
+#reason button:hover {
+	background:#423F3E;
+	color:white;
+}
+
+
+#reason_num {display:flex; position:relative; padding:3vw;} 
+
+#reason_num p {font-size:1.2vw; line-height:90%; text-align:center;}
+/* 육각형 도형 부분*/ 
+.outside {
+	 margin:auto; 
+	position: relative; width: 10vw;	height:10vw;	background: #423F3E;  /*라인색*/
+	clip-path: polygon(0 30%,  30% 0,  100% 0,  100% 70%,  70% 100%,  0 100%);
+}
+.inside {
+  position: absolute; top: 0.5vw;  left: 0.5vw;  right: 0.5vw;  bottom: 0.5vw;  background: #fff;  
+  clip-path: polygon(	0 30%, 30% 0, 100% 0,100% 70%,70% 100%,0 100%);
+	}
+	
+/*수강과정*/	
+	
+#info_div	{ background:#fff; padding-bottom:4vw;}
+#info { width:70%; margin:auto; text-align:center;  border-top:1px solid #423F3E;}	
+#info h2 {font-size:2vw; padding:4vw; padding-top:6vw; font-family: 'Gowun Batang', serif;}
+
+
+#nara_1 { 
+display:flex; font-size:1.2vw; font-family: 'Gowun Batang', serif; 
+}
+#nara_1>p {
+		flex:1; padding:0;  margin-bottom:1vw;
+}
+.nara>p {font-size:1.2vw; font-family: 'Gowun Batang', serif; margin-bottom:1vw;}
+.nara_in {display:flex; line-height:1.6vw;}
+.nara_in p {font-size:1.2vw; font-family: 'Gowun Batang', serif; margin: 1vw; color:black;}
+
+.nara_in div {
+	margin:auto; height:15vw; 
+	flex:1; margin:0 1vw; background:white;
+	border:2px solid #423F3E;
+	/*justify-content:space-around;*/
+	}
+	
+	
+	
+/*국비지원받아보세요*/
+	
+#tel_div {background:#423F3E; height:4.5vw;}
+#tel {width:70%; display:flex; color:white;  margin:auto;  }
+#tel h2 {flex:1; text-align:center; font-size:1.6vw; font-family: 'Gowun Batang', serif; padding:1vw; }
+
+#tel p {
+	display:flex;
+	font-size:1vw;  border:2px solid white; color:white; border-radius:1rem;
+	font-family: 'Gowun Batang', serif; align-items:center; margin-right:10vw;
+	}
+#tel p:hover {background:white; color:black;}
+
+
+
+/*포트폴리오*/
+#port_div {
+	background:#fff; border:1px solid transparent;
+}
+
+#port {
+	 position:relative; text-align:center; width:70%; margin:auto; 
+}
+
+#plse {
+	display:flex; border:1px solid transparent; padding-top:3vw;
+}
+#plse h2 {flex:2; text-align:left; padding:3vw 0 2vw 1vw; margin:0; font-size:3vw; 
+
+}  
+
+
+
+.first {display:flex; align-items:center; justify-content:space-around; }
+.first div {margin:2vw; position:relative; }
+.first a {display:block; overflow:hidden; transition:0.5s}   /*추가함. js 호버 부드럽게 하기 위해서 transition:0.5도 추가*/
+.first a>img {
+	
+	transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+
+.first a>img:hover {
+	transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+	/*opacity:0.3;*/
+	}
+	
+.first p {
+	margin:0;  padding:0;
+	text-align:left;
+	color:black; font-size:0.8vw; font-family: 'Nanum Gothic', sans-serif;
+
+	}
+
+
+#port button { 
+	background:none; border:2px solid #423F3E; border-radius:1rem; margin:3rem 0; font-size:1vw; 
+	font-family: 'Gowun Batang', serif;
+}
+
+#port button:hover {
+	color:white;
+	background:#423F3E;
+}
+
+.first .go {
+	color:#black; padding-top:0.3vw;  opacity:0.6;font-size:0.6vw;
+}
+
+
+
+/*푸터*/
+
+#footer_div{
+	background:#423F3E;
+}
+footer {
+	position:relative; display:flex;
+	 padding:0 1rem; 
+	justify-content:space-evenly;
+	text-align:left;	
+	font-family: 'Gowun Batang', serif;
+	font-size:1vw; color:white;
+	width:70%; margin:auto;
+}
+footer div {flex:1; line-height:60%; padding-left:10%;}
+footer form {line-height:1; padding-top:1rem; text:1vw;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
